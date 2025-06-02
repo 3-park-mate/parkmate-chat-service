@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  chat:
+    container_name: chat-service
+    image: 090188239653.dkr.ecr.ap-northeast-2.amazonaws.com/chat-service
+    ports:
+      - "8300:8300"
+    env_file:
+      - .env
+    networks:
+      - backend
+
+networks:
+  backend:
+    external: true
