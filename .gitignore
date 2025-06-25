@@ -38,3 +38,4 @@ out/
 
 ### 환경변수 숨기기 ###
 .env
+#application.yml
