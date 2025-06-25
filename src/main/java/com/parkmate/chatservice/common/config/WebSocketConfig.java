@@ -3,12 +3,14 @@ package com.parkmate.chatservice.common.config;
 import com.parkmate.chatservice.common.config.interceptor.WebSocketHandshakeInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
+import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 @Configuration
 @EnableWebSocketMessageBroker
+@EnableWebSocket
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     // 1. 메시지 브로커 설정
@@ -32,10 +34,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
                 .setAllowedOrigins("*")
                 .setAllowedOriginPatterns("*") // CORS 허용
                 .addInterceptors(new WebSocketHandshakeInterceptor());
-//        registry.addEndpoint("/ws-chat")
-//                .setAllowedOriginPatterns("*")
-//                .addInterceptors(new WebSocketHandshakeInterceptor())
-//                .withSockJS();
 
     }
 

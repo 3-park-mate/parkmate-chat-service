@@ -26,7 +26,6 @@ public class ChatRoomController {
 
         ChatRoomCreateRequestDto dto = ChatRoomCreateRequestDto.of(participantAUuid, vo.getParticipantBUuid());
         return ApiResponse.ok(
-//                HttpStatus.OK,
                 chatRoomService.createOrGetRoom(dto).toVo());
     }
 
